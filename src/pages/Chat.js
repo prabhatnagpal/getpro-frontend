@@ -291,7 +291,7 @@ const Chat = ({ orderId, orderName }) => {
 
   const userDataStorage = JSON.parse(localStorage.getItem("user"));
 
-  console.log("UserEmail", userDataStorage.email);
+ // console.log("UserEmail", userDataStorage.email);
 
   return (
     <>

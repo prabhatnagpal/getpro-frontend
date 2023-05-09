@@ -595,9 +595,7 @@ class Services extends Component {
                             <li className="services_li-2 me-0 d-block"></li>
                           </ul>
 
-                          <p className="services_box-p p-0 text-center">
-                            1 Guest Posts
-                          </p>
+                        
 
                           <li className="ol_li">
                             <span className="fs-3 justify-content-center d-flex align-items-center ">
@@ -612,7 +610,7 @@ class Services extends Component {
 
                           <ol
                             className="p-0"
-                            style={{ overflowX: "auto", height: "150px" }}
+                           
                           >
                             <li className="ol_li d-flex justify-content-center">
                               <span className="ol_li-spa1 me-2">
@@ -636,15 +634,15 @@ class Services extends Component {
                             </button>
 
                             <br />
-                            <button
+                            {/* <button
                               type="button"
                               className="services-btn2"
                               data-bs-toggle="modal"
                               data-bs-target={`${"#payment_id" + friend._id}`}
                             >
                               SUBSCRIBE
-                            </button>
-                            <br />
+                            </button> */}
+                       
                             {/* <Link to="/viewcart"> */}
                             <a href="/viewcart">
                               <button

@@ -211,7 +211,7 @@ const Dashboard = () => {
                       name="ids"
                       id="ids"
                     >
-                      <option onClick={() => setAllOreder(true)}>
+                      <option value="true">
                         All Orders
                       </option>
 
@@ -254,11 +254,12 @@ const Dashboard = () => {
                       {viewOrder && selectedId
                         ? viewOrder
                             .filter((value) => {
-                              return (
+                              return (value.is_order.includes(selectedId)||
                                 value.type.includes(selectedId) ||
                                 value.status.includes(selectedId) ||
                                 value.pay_method.includes(selectedId) ||
                                 String(value.order_id).includes(selectedId)
+                                
                                 // value.sub_status.includes(selectedId)
                               );
                             })
@@ -393,6 +394,12 @@ const Dashboard = () => {
                                           <div className="offcanvas-body">
                                             <table className="table table-borderless mb-0">
                                               <tbody>
+                                              <tr>
+                                                  <td>Transaction Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.transactionId}</td>
+                                                </tr>
                                                 <tr>
                                                   <td>Order Id</td>
                                                   <td>:</td>
@@ -418,7 +425,7 @@ const Dashboard = () => {
                                                 <tr>
                                                   <td>Amount</td>
                                                   <td>:</td>{" "}
-                                                  <td>{friend.totalAmount}</td>
+                                                  <td>${friend.totalAmount}</td>
                                                 </tr>
                                                 <tr>
                                                   <td>Sub.Cancel</td>
@@ -484,6 +491,7 @@ const Dashboard = () => {
                                     </tr>
                                   ) : (
                                     <tr key={index} className="viewOrderbody">
+                                      {/* <td>{friend.transactionId}</td> */}
                                       <td>{friend.order_id}</td>
                                       <td> {friend.datetime}</td>
 
@@ -567,6 +575,12 @@ const Dashboard = () => {
                                             <div className="offcanvas-body">
                                               <table className="table table-borderless mb-0">
                                                 <tbody>
+                                                <tr>
+                                                    <td>Transaction Id</td>
+                                                    <td>:</td>
+
+                                                    <td>{friend.transactionId}</td>
+                                                  </tr>
                                                   <tr>
                                                     <td>Order Id</td>
                                                     <td>:</td>
@@ -588,7 +602,7 @@ const Dashboard = () => {
                                                     <td>Amount</td>
                                                     <td>:</td>{" "}
                                                     <td>
-                                                      {friend.totalAmount}
+                                                      ${friend.totalAmount}
                                                     </td>
                                                   </tr>
 
@@ -673,6 +687,13 @@ const Dashboard = () => {
                                             <div className="offcanvas-body">
                                               <table className="table table-borderless mb-0">
                                                 <tbody>
+
+                                                <tr>
+                                                    <td>Transaction Id</td>
+                                                    <td>:</td>
+
+                                                    <td>{friend.transactionId}</td>
+                                                  </tr>
                                                   <tr>
                                                     <td>Order Id</td>
                                                     <td>:</td>
@@ -695,11 +716,18 @@ const Dashboard = () => {
                                                     <td>{friend.type}</td>
                                                   </tr>
 
+
+                                                  <tr>
+                                                    <td>Coupon Discount</td>
+                                                    <td>:</td>{" "}
+                                                    <td>${friend.couponAmount}</td>
+                                                  </tr>
+
                                                   <tr>
                                                     <td>Amount</td>
                                                     <td>:</td>{" "}
                                                     <td>
-                                                      {friend.totalAmount}
+                                                      ${friend.totalAmount}
                                                     </td>
                                                   </tr>
 
@@ -778,6 +806,7 @@ const Dashboard = () => {
                               <>
                                 {friend.sub_status === "Active" ? (
                                   <tr key={index} className="viewOrderbody">
+                                               {/* <td>{friend.transactionId}</td> */}
                                     <td>{friend.order_id}</td>
                                     <td>{friend.datetime}</td>
 
@@ -915,6 +944,12 @@ const Dashboard = () => {
                                         <div className="offcanvas-body">
                                           <table className="table table-borderless mb-0">
                                             <tbody>
+                                            <tr>
+                                                <td>Transaction Id</td>
+                                                <td>:</td>
+
+                                                <td>{friend.transactionId}</td>
+                                              </tr>
                                               <tr>
                                                 <td>Order Id</td>
                                                 <td>:</td>
@@ -1002,6 +1037,7 @@ const Dashboard = () => {
                                   </tr>
                                 ) : (
                                   <tr key={index} className="viewOrderbody">
+                                     {/* <td>{friend.transactionId}</td> */}
                                     <td>{friend.order_id}</td>
                                     <td> {friend.datetime}</td>
 
@@ -1096,6 +1132,12 @@ const Dashboard = () => {
                                           <div className="offcanvas-body">
                                             <table className="table table-borderless mb-0">
                                               <tbody>
+                                              <tr>
+                                                  <td>Transaction Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.transactionId}</td>
+                                                </tr>
                                                 <tr>
                                                   <td>Order Id</td>
                                                   <td>:</td>
@@ -1196,6 +1238,12 @@ const Dashboard = () => {
                                           <div className="offcanvas-body">
                                             <table className="table table-borderless mb-0">
                                               <tbody>
+                                              <tr>
+                                                  <td>Transaction Id</td>
+                                                  <td>:</td>
+
+                                                  <td>{friend.transactionId}</td>
+                                                </tr>
                                                 <tr>
                                                   <td>Order Id</td>
                                                   <td>:</td>

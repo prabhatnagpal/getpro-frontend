@@ -147,6 +147,7 @@ import CancelOrderPaypal from "./pages/CancelOrderPaypal";
 import SubscriptionPaypalfailed from "./pages/SubscriptionPaypalfailed";
 import { HelmetProvider } from "react-helmet-async";
 import RazorPaySuccess from "./pages/RazorPaySuccess";
+import PageNotFound from "./pages/PageNotFound"
 
 function App() {
   return (
@@ -162,9 +163,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/how-it-work" element={<HowItwork />} />
+        <Route path="/howitwork" element={<HowItwork />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/place-your-order" element={<PlaceYourOrder />} />
+        <Route path="/placeyourorder" element={<PlaceYourOrder />} />
         <Route path="/prices" element={<Prices />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/register" element={<Register />} />
@@ -596,6 +597,10 @@ function App() {
         <Route
           path="savecardrazorpaypaymentsuccess"
           element={<SaveCardRazorpayPaymentSuccess />}
+        />
+            <Route
+          path="*"
+          element={<PageNotFound />}
         />
       </Routes>
       <Footer />

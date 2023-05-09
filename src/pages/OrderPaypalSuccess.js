@@ -10,12 +10,14 @@ const OrderPaypalSuccess = () => {
   const tokenID = localStorage.getItem("token");
   const pay_id = sessionStorage.getItem("pay_id");
   const paypal = sessionStorage.getItem("totalamount");
+  const couponName = sessionStorage.getItem("couponName");
+  const couponAmount = sessionStorage.getItem("couponAmount");
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
 
-  const data = { totalamount: parseInt(paypal), pay_id };
+  const data = { totalamount: parseInt(paypal),couponAmount,couponName, pay_id };
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const OrderPaypalSuccess = () => {
               <span className=" p-0 fs-1 fw-bold">Payment Successfully</span>
               <p className="fp-p p-0">Your PayPal Payment Successfull</p>
 
-              <Link className="" to="/transactionhistory">
+              <Link className="" to="/dashboard">
                 <button type="submit" className="fp-btn px-5  m-0">
                   Go Back
                 </button>

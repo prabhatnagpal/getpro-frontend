@@ -53,10 +53,7 @@ function Author() {
           <div className="container">
             <div className="row">
               <h2 className="team_sec-h2">Meet our Authors</h2>
-              <p className="team_sec-p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lor
-              </p>
+             
 
               {images.slice(offset, offset + PER_PAGE).map((friend) => (
                 <div className="col-md-3" key={friend._id}>

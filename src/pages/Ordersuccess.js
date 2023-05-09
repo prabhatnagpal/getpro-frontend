@@ -7,12 +7,15 @@ const Ordersuccess = () => {
   const tokenID = localStorage.getItem("token");
   const pay_id = sessionStorage.getItem("pay_id");
   const amount = sessionStorage.getItem("TotalAmount");
+  const couponName = sessionStorage.getItem("couponName");
+  const couponAmount = sessionStorage.getItem("couponAmount");
+  console.log(couponAmount,couponName)
   const headers = {
     "Content-Type": "application/json",
     Authorization: `${tokenID}`,
   };
 
-  const data = { totalAmount: parseInt(amount), pay_id };
+  const data = { totalAmount: parseInt(amount),couponAmount,couponName, pay_id };
   const navigate = useNavigate();
 
   useEffect(() => {

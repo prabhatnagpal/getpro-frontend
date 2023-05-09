@@ -92,7 +92,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/how-it-work">
+                  <Link className="nav-link set" to="/howitwork">
                     How It Works
                   </Link>
                 </li>
@@ -102,7 +102,7 @@ const Header = () => {
                   </Link>
                 </li>
                 <li className="nav-item pad">
-                  <Link className="nav-link set" to="/place-your-order">
+                  <Link className="nav-link set" to="/placeyourorder">
                     Place Your Order
                   </Link>
                 </li>

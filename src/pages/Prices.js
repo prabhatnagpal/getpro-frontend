@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import GetinTouch from "./GetinTouch";
 
 const Prices = () => {
@@ -17,6 +17,26 @@ const Prices = () => {
   function onClick(exy) {
     setDeactive(exy.target.value);
   }
+
+
+  
+  const [images, setImages] = useState([]);
+
+  useEffect(()=>{
+    fetch(`${process.env.REACT_APP_APIURL}/getAllPrices`, {
+      method: "GET",
+      mode: "cors",
+    })
+      .then((response) => response.json())
+
+      .then((json) => {
+        console.log(json.message);
+        setImages(json.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },[])
 
   return (
     <div>
@@ -99,24 +119,19 @@ const Prices = () => {
               </thead>
 
               <tbody style={{ border: "none" }}>
+                {images.map((item)=>{
+                  return(
+                    <>
                 <tr>
-                  <td>Expert</td>
-                  <td>0.03</td>
-                  <td>0.02</td>
-                  <td>0.01</td>
+                  <td>{item.name}</td>
+                  <td>{item.oneDay}</td>
+                  <td>{item.twoDay}</td>
+                  <td>{item.fiveDay}</td>   
                 </tr>
-                <tr style={{ background: "#F6FBFB" }}>
-                  <td>Premium</td>
-                  <td>0.06</td>
-                  <td>0.04</td>
-                  <td>0.02</td>
-                </tr>
-                <tr>
-                  <td>Enterprise</td>
-                  <td>0.08</td>
-                  <td>0.06</td>
-                  <td>0.04</td>
-                </tr>
+            
+                </>
+                )
+              })}
                 <tr></tr>
               </tbody>
             </table>
