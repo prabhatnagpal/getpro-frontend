@@ -163,7 +163,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/forgot" element={<Forgot />} />
-        <Route path="/how-it-work" element={<HowItwork />} />
+        <Route path="/how-it-works" element={<HowItwork />} />
         <Route path="/login" element={<Login />} />
         <Route path="/place-your-order" element={<PlaceYourOrder />} />
         <Route path="/prices" element={<Prices />} />
